@@ -12,7 +12,7 @@ describe('register spec', () => {
     it('fill registration forms', () => {
         cy.get('input[id="first-name"]').type('Simo')
         cy.get('input[id="last-name"]').type('Matavulj')
-        cy.get('input[id="email"]').type('simomatavulj1@gmail.com')
+        cy.get('input[id="email"]').type('simomatavulj11@gmail.com')
         cy.get('input[id="password"]').type('12345678')
         cy.get('input[id="password-confirmation"]').type('12345678')
         cy.get('input[class="form-check-input"]').check()
@@ -21,15 +21,3 @@ describe('register spec', () => {
     })
 })
 
-// describe('negative register spec', () => {
-//     it('fill registration forms', () => {
-//         cy.get('input[id="first-name"]').type('Simo')
-//         cy.get('input[id="last-name"]').type('Matavulj')
-//         cy.get('input[id="email"]').type('simomatavuljgmail.com')
-//         cy.get('input[id="password"]').type('12345678')
-//         cy.get('input[id="password-confirmation"]').type('12345678')
-//         cy.get('input[class="form-check-input"]').check()
-//         cy.get('button[type="submit"]').click()
-        
-//     })
-// })

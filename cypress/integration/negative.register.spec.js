@@ -8,7 +8,7 @@ describe('register page', () => {
     })
 })
 
-describe('register spec', () => {
+describe('neg. register spec', () => {
     it('fill registration forms', () => {
         cy.get('input[id="first-name"]').type('Simo')
         cy.get('input[id="last-name"]').type('Matavulj')
