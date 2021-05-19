@@ -19,4 +19,9 @@ describe('register spec', () => {
         cy.get('button[type="submit"]').click()
         
     })
+<<<<<<< HEAD
 })
+=======
+})
+
+>>>>>>> d0956306479bdd4bf04214e7fa6cecec005e8643
