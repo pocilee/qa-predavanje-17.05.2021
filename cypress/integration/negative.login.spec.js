@@ -2,7 +2,7 @@ describe('login spec', () => {
     it('visit gallery app', () => {
         cy.visit('https://gallery-app.vivifyideas.com/')
     })
-
+    
     it('click login button', () => {
         cy.get('a[href="/login"]').click()
     })
