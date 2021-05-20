@@ -39,11 +39,3 @@ describe('logout', () => {
 // it.only - odradice samo ovaj test
 // it.wait(4000) - saceka zadato vreme, pa onda radi test
 
-
-
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> d0956306479bdd4bf04214e7fa6cecec005e8643
