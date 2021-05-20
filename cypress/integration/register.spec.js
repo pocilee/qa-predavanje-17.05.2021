@@ -16,12 +16,7 @@ describe('register spec', () => {
         cy.get('input[id="password"]').type('12345678')
         cy.get('input[id="password-confirmation"]').type('12345678')
         cy.get('input[class="form-check-input"]').check()
-        cy.get('button[type="submit"]').click()
-        
+        cy.get('button[type="submit"]').click()  
     })
-<<<<<<< HEAD
-})
-=======
 })
 
->>>>>>> d0956306479bdd4bf04214e7fa6cecec005e8643
