@@ -1,6 +1,6 @@
 describe('login spec', () => {
     it('visit gallery app', () => {
-        cy.visit('')
+        cy.visit('https://gallery-app.vivifyideas.com/')
     })
 
     it('click login button', () => {
@@ -9,11 +9,11 @@ describe('login spec', () => {
     })
 })
 
-describe('login - negative', () => {
-    it('enter email - neg. without @ sign', () => {
-        cy.get('input[id="email"]').type('goran.pobricgmail.com')
-    })
-})
+// describe('login - negative', () => {
+//     it('enter email - neg. without @ sign', () => {
+//         cy.get('input[id="email"]').type('goran.pobricgmail.com')
+//     })
+// })
 
 describe('login spec', () => {
     it('enter email', () => {
@@ -38,12 +38,3 @@ describe('logout', () => {
 
 // it.only - odradice samo ovaj test
 // it.wait(4000) - saceka zadato vreme, pa onda radi test
-
-
-
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> d0956306479bdd4bf04214e7fa6cecec005e8643
