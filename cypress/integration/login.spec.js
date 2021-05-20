@@ -9,12 +9,6 @@ describe('login spec', () => {
     })
 })
 
-// describe('login - negative', () => {
-//     it('enter email - neg. without @ sign', () => {
-//         cy.get('input[id="email"]').type('goran.pobricgmail.com')
-//     })
-// })
-
 describe('login spec', () => {
     it('enter email', () => {
         cy.get('input[id="email"]').type('goran.pobric@gmail.com')
@@ -32,8 +26,21 @@ describe('login spec', () => {
 describe('logout', () => {
     it('click logout', () => {
         cy.get('.ml-auto > :nth-child(3) > .nav-link').click()
-        // cy.get('ul[class="navbar-nav ml-auto mt-2 mt-lg-0"] > li[class="nav-item"] > a[class="nav-link nav-buttons"]').click()
     })
+})
+
+
+// instead of click on 'submit', click button <enter> after password input
+
+describe('login spec + {enter}', () => {
+    it('enter email', () => {
+        cy.get('input[id="email"]').type('goran.pobric@gmail.com')
+    })
+
+    it('enter password', () => {
+        cy.get('input[id="password"]').type('pobra111{enter}')
+    })
+
 })
 
 // it.only - odradice samo ovaj test
