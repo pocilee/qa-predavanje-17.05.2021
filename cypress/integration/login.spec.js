@@ -1,4 +1,5 @@
 const locators = require("./../fixtures/locators.json")
+const faker = require('faker');
 
 // describe('login spec', () => {
 //     it('visit gallery app', () => {
@@ -28,13 +29,12 @@ describe('login spec', () => {
     it('submit', () => {
         cy.get(locators.loginPage.submitBtn).click()
     })
-})
 
-describe('logout', () => {
     it('click logout', () => {
         cy.get(locators.navigation.logoutButton).click()
     })
 })
+
 
 
 // instead of click on 'submit', click button <enter> after password input

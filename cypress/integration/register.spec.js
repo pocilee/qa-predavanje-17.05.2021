@@ -1,22 +1,28 @@
-describe('register page', () => {
-    it('visit gallery app', () => {
-        cy.visit('')
-    })
+const locators = require("./../fixtures/locators.json")
+const faker = require('faker');
 
-    it('click register button', () => {
-        cy.get('a[href="/register"]').click()
-    })
-})
+let userData = {
+    randomName : faker.name.firstName(),
+    randomLastName : faker.name.lastName(),
+    randomEmail : faker.internet.email(),
+    randomPassword : faker.internet.password()
+}
+
 
 describe('register spec', () => {
+    before(() => {
+        cy.visit('/')
+        cy.get(locators.navigation.registerButton).click()
+      })
     it('fill registration forms', () => {
-        cy.get('input[id="first-name"]').type('Simo')
-        cy.get('input[id="last-name"]').type('Matavulj')
-        cy.get('input[id="email"]').type('simomatavulj11@gmail.com')
-        cy.get('input[id="password"]').type('12345678')
-        cy.get('input[id="password-confirmation"]').type('12345678')
-        cy.get('input[class="form-check-input"]').check()
-        cy.get('button[type="submit"]').click()  
+        // cy.get(locators.registerPage.firstName).type(faker.name.firstName())
+        cy.get(locators.registerPage.firstName).type(userData.randomName)
+        cy.get(locators.registerPage.lastName).type(userData.randomLastName)
+        cy.get(locators.registerPage.email).type(userData.randomEmail)
+        cy.get(locators.registerPage.password).type(userData.randomPassword)
+        cy.get(locators.registerPage.rePassword).type(userData.randomPassword)
+        cy.get(locators.registerPage.terms).check()
+        cy.get(locators.registerPage.submit).click()  
     })
 })
 

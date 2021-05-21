@@ -1,13 +1,24 @@
 {
     "navigation" : {
         "loginButton" : "a[href='/login']",
-        "logoutButton" : ".ml-auto > :nth-child(3) > .nav-link"
+        "logoutButton" : ".ml-auto > :nth-child(3) > .nav-link",
+        "registerButton" : "a[href='/register']"
     },
 
     "loginPage" : {
         "email" : "input[id='email']",
         "password" : "input[id='password']",
         "submitBtn" : "button[type='submit']"
-    }
+    },
 
+    "registerPage" : {
+        "firstName" : "input[id='first-name']",
+        "lastName" : "input[id='last-name']",
+        "email" : "input[id='email']",
+        "password" : "input[id='password']",
+        "rePassword" : "input[id='password-confirmation']",
+        "terms" : "input[class='form-check-input']",
+        "submit" : "button[type='submit']"
+
+    }
 }
