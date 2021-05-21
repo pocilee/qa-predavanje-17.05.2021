@@ -2,7 +2,9 @@
     "navigation" : {
         "loginButton" : "a[href='/login']",
         "logoutButton" : ".ml-auto > :nth-child(3) > .nav-link",
-        "registerButton" : "a[href='/register']"
+        "registerButton" : "a[href='/register']",
+        "createGallery" : "a[href='/create']"
+
     },
 
     "loginPage" : {
@@ -20,5 +22,12 @@
         "terms" : "input[class='form-check-input']",
         "submit" : "button[type='submit']"
 
+    },
+
+    "createGalleryPage" : {
+        "title" : "input[id='title']",
+        "description" : "input[id='description']",
+        "imageUrl" : ".input-group.mb-3 > .form-control",
+        "submit" : "form > button:nth-of-type(1)"
     }
 }
