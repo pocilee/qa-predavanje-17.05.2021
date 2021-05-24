@@ -14,13 +14,17 @@
     },
 
     "registerPage" : {
+        "h1Header" : "h1",
         "firstName" : "input[id='first-name']",
         "lastName" : "input[id='last-name']",
         "email" : "input[id='email']",
         "password" : "input[id='password']",
         "rePassword" : "input[id='password-confirmation']",
         "terms" : "input[class='form-check-input']",
-        "submit" : "button[type='submit']"
+        "submit" : "button[type='submit']",
+        "emailValidationError" : ":nth-child(3) > .alert",
+        "passwordValidationError" : "div:nth-of-type(4) > .alert.alert-danger",
+        "termsValidationError" : "div:nth-of-type(6) > .alert.alert-danger"
 
     },
 

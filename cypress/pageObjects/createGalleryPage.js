@@ -1,8 +1,8 @@
 class AuthCreate {
 
-    // get createGal() {
-    //     return cy.get('a[href="/create"]')
-    // }
+    get createGal() {
+        return cy.get('a[href="/create"]')
+    }
 
     get titleInput() {
         return cy.get('input[id="title"]')

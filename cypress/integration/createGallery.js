@@ -2,12 +2,13 @@ const locators = require("./../fixtures/locators.json")
 
 import { authLogin } from '../pageObjects/loginPage.js'
 import { authCreate } from '../pageObjects/createGalleryPage.js'
+import { navigation } from '../pageObjects/navigation.js'
 
 describe('login spec', () => {
       it('login with valid credentials', () => {
         cy.visit('/')
         cy.get(locators.navigation.loginButton).click()
-          authLogin.login('goran.pobric@gmail.com', 'pobra111')
+          authLogin.login('simakosmos@daleki.svemir.com', 'simakosmos1')
       })
 })
 
@@ -15,7 +16,8 @@ describe('login spec', () => {
 
 describe('create gallery', () => {
       it('succesfully create new gallery', () => {
-        authCreate.create('AuthGallery', 'AuthDescription', 'https://greenangletv.com/wp-content/uploads/2020/11/wed-blog-shutterstock_1703194387_low_nwm.jpg')
+        navigation.clickCreateGallery()
+        authCreate.create('Sima Kosmos', 'iz dalekog svemira', 'https://pbs.twimg.com/profile_images/1073348422722293761/gtkwy3Fe.jpg')
       })
 })
 
