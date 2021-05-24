@@ -49,6 +49,13 @@ describe('register spec', () => {
         cy.get(locators.registerPage.h1Header).should('have.css', 'color', 'rgb(72, 73, 75)')
     })
 
+    it('check First Name label', () => {
+        cy.get(locators.registerPage.firstNameLabel).should('be.visible')
+        cy.get(locators.registerPage.firstNameLabel).should('have.text', 'First Name')
+        cy.get(locators.registerPage.firstNameLabel).should('have.css', 'color', 'rgb(72, 73, 75)')
+        
+    })
+
 })
 
 describe('register with already taken email', () => {

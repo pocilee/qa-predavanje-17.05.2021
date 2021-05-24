@@ -1,5 +1,5 @@
 const locators = require("./../fixtures/locators.json")
-const faker = require('faker');
+// const faker = require('faker');
 
 // describe('login spec', () => {
 //     it('visit gallery app', () => {
@@ -14,48 +14,60 @@ const faker = require('faker');
 
 describe('login spec', () => {
     before(() => {
-        cy.visit('/')
-        cy.get(locators.navigation.loginButton).click()
-      })
+        // cy.visit('/')
+        cy.request('POST', 'https://gallery-api.vivifyideas.com/api/auth/login', {
+            email: "simakosmos@daleki.svemir.com",
+            password: "simakosmos1"
+        }).its('body').then((response) => {
+            window.localStorage.setItem('token', response.access_token)
+            cy.log(response.access_token)
+        })
+       
+        it('visit gallery', () => {
+            cy.visit('')
+            cy.get(locators.navigation.loginButton).should('not.be.visible')
+        })
+      // cy.get(locators.navigation.loginButton).click()
+    })
       
-    it('enter email', () => {
-        cy.get(locators.loginPage.email).type("goran.pobric@gmail.com")
-    })
+    // it('enter email', () => {
+    //     cy.get(locators.loginPage.email).type("goran.pobric@gmail.com")
+    // })
 
-    it('enter password', () => {
-        cy.get(locators.loginPage.password).type("pobra111")
-    })
+    // it('enter password', () => {
+    //     cy.get(locators.loginPage.password).type("pobra111")
+    // })
 
-    it('submit', () => {
-        cy.get(locators.loginPage.submitBtn).click()
-    })
+    // it('submit', () => {
+    //     cy.get(locators.loginPage.submitBtn).click()
+    // })
 
-    it('click logout', () => {
-        cy.get(locators.navigation.logoutButton).click()
-    })
+    // it('click logout', () => {
+    //     cy.get(locators.navigation.logoutButton).click()
+    // })
 })
 
 
 
 // instead of click on 'submit', click button <enter> after password input
 
-describe('login spec + {enter}', () => {
+// describe('login spec + {enter}', () => {
     
-    it('visit page', () => {
-        cy.visit('/')
-        cy.get(locators.navigation.loginButton).click()
-    })
+//     it('visit page', () => {
+//         cy.visit('/')
+//         cy.get(locators.navigation.loginButton).click()
+//     })
         
     
-    it('enter email', () => {
-        cy.get('input[id="email"]').type('goran.pobric@gmail.com')
-    })
+//     it('enter email', () => {
+//         cy.get('input[id="email"]').type('goran.pobric@gmail.com')
+//     })
 
-    it('enter password', () => {
-        cy.get('input[id="password"]').type('pobra111{enter}')
-    })
+//     it('enter password', () => {
+//         cy.get('input[id="password"]').type('pobra111{enter}')
+//     })
 
-})
+// })
 
 // it.only - odradice samo ovaj test
 // it.wait(4000) - saceka zadato vreme, pa onda radi test

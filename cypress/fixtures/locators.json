@@ -15,6 +15,7 @@
 
     "registerPage" : {
         "h1Header" : "h1",
+        "fistNameLabel" : "label[for='first-name']",
         "firstName" : "input[id='first-name']",
         "lastName" : "input[id='last-name']",
         "email" : "input[id='email']",
