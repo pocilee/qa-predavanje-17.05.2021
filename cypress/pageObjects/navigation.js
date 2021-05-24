@@ -1,25 +1,27 @@
-class navigation {
-    get create() {
-        return cy.create('a[href="/create"]')
-
-    }
-    get password() {
-        return cy.get('input[id="password"]')
+class Navigation {
+    get login () {
+        return cy.get ('a[href="/login"]')
     }
 
-    get submitBtn() {
-        return cy.get('button[type="submit"]')
+    get enterCreateGallery () {
+        return cy.get ("a[href='/create']")
     }
 
-    get loginButton() {
-        return cy.get('a[href="/login"]')
+    get addImage () {
+        return cy.get ('form div:nth-of-type(3) > [type]')
     }
 
-    login(email, password) {
-        this.email.type(email)
-        this.password.type(password)
-        this.submitBtn.click()
+    clickLogin() {
+        this.login.click()
+    }
+
+    clickCreateGallery() {
+        this.enterCreateGallery.click()
+    }
+
+    clickAddImage() {
+        this.addImage.click()
     }
 }
 
-export const authLogin = new AuthLogin()
+export const navigation = new Navigation
