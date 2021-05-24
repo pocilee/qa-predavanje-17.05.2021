@@ -1,3 +1,7 @@
 {
-    "baseUrl": "https://gallery-app.vivifyideas.com/"
+    "baseUrl": "https://gallery-app.vivifyideas.com/",
+    "env" : {
+        "userName" : "simakosmos@daleki.svemir.com",
+        "password" : "simakosmos1"
+    }
 }

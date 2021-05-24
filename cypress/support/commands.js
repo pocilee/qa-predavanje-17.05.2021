@@ -24,13 +24,26 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('logInThroughBackend', (userName, password) => {
+// Cypress.Commands.add('logInThroughBackend', (userName, password) => {
+//     cy.request({
+//         method:'POST',  //moze i ovako sa method url body ali i ne mora
+//         url: 'https://gallery-api.vivifyideas.com/api/auth/login',
+//         body: {
+//             email: userName,
+//             password: password
+//         }
+//     }).its('body').then((response) => {
+//         window.localStorage.setItem('token', response.access_token)
+//     })
+// })
+
+Cypress.Commands.add('logInThroughBackend', () => {
     cy.request({
         method:'POST',  //moze i ovako sa method url body ali i ne mora
         url: 'https://gallery-api.vivifyideas.com/api/auth/login',
         body: {
-            email: userName,
-            password: password
+            email: Cypress.env('userName'),
+            password: Cypress.env('password')
         }
     }).its('body').then((response) => {
         window.localStorage.setItem('token', response.access_token)

@@ -20,8 +20,8 @@
 
 describe('create gallery tests', () => {  //requestovali smo preko post, link i body ako ga ima. dobijamo odgovor u obliku tokena koji je body i selektujemo ga preko its i u localstorage ga setujemo kao token
     before (() => {
-        cy.logInThroughBackend('simakosmos@daleki.svemir.com', 'simakosmos1')
-
+        // cy.logInThroughBackend('simakosmos@daleki.svemir.com', 'simakosmos1') // duza verzija
+        cy.logInThroughBackend() // kraca, stavljeno je sve u cypress.json i commands.js
         // cy.request('POST', 'https://gallery-api.vivifyideas.com/api/auth/login', {  //stavili smo u support commandsjs
         //     email: "simakosmos@daleki.svemir.com",
         //     password: "simakosmos1"
