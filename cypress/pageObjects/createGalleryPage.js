@@ -32,9 +32,15 @@ class AuthCreate {
         descriptions = descriptions || undefined
         imageUrl = imageUrl || undefined
 
-        if(title != undefined || descriptions != undefined || title != undefined) {
+        if(title != undefined) {
             this.titleInput.type(title)
+        }
+            
+        if(descriptions != undefined) {
             this.descriptionsInput.type(descriptions)
+        }
+        
+        if(imageUrl != undefined) {
             this.imageUrlInput.type(imageUrl)
         }
 
