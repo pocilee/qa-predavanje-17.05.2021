@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 const locators = require("./../fixtures/locators.json")
 const faker = require('faker');
 
@@ -37,7 +39,7 @@ describe('register spec', () => {
         cy.get(locators.registerPage.passwordValidationError).should('have.css', 'background-color', 'rgb(248, 215, 218)')
     })
 
-    it('terms error assertions', () => {
+    it('terms error', () => {
         cy.get(locators.registerPage.termsValidationError).should('be.visible')
         cy.get(locators.registerPage.termsValidationError).should('have.text', 'The terms and conditions must be accepted.')
         cy.get(locators.registerPage.termsValidationError).should('have.css', 'background-color', 'rgb(248, 215, 218)')
