@@ -1,4 +1,12 @@
 class Navigation {
+    get register () {
+        return cy.get ('a[href="/register"]')
+    }
+
+    get registerTerms () {
+        return cy.get ('input["class=form-check-input"]')
+    }
+
     get login () {
         return cy.get ('a[href="/login"]')
     }
@@ -11,6 +19,10 @@ class Navigation {
         return cy.get ('form div:nth-of-type(3) > [type]')
     }
 
+    clickTerms() {
+        this.registerTerms.click()
+    }
+    
     clickLogin() {
         this.login.click()
     }
