@@ -19,7 +19,6 @@ describe('login assertions - negative', () => {
     it('wrong email format', () => {
         cy.visit('https://gallery-app.vivifyideas.com/')
         cy.get(locators.navigation.loginButton).click()
-        var emailInputLength = cy.get(locators.loginPage.email)
         cy.get(locators.loginPage.email).type("simakosmos@dalekisvemircom")
         cy.get(locators.loginPage.password).type("simakosmos1")
         cy.get(locators.loginPage.submitBtn).click()

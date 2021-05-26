@@ -2,6 +2,12 @@
     "baseUrl": "https://gallery-app.vivifyideas.com/",
     "env" : {
         "userName" : "simakosmos@daleki.svemir.com",
-        "password" : "simakosmos1"
+        "password" : "simakosmos1",
+        "firstName" : "Klark",
+        "lastName" : "Kent",
+        "email" : "supermen@kripton.com",
+        "passwordReg" : "neMozeMiNikoNista",
+        "passwordRegConfirm" : "neMozeMiNikoNista"
     }
+    
 }

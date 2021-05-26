@@ -13,8 +13,23 @@ let userData = {
     randomPassword : faker.internet.password()
 }
 
+describe('register gallery backend', () => { 
+    before (() => {
+        // cy.logInThroughBackend('simakosmos@daleki.svemir.com', 'simakosmos1') // duza verzija
+        cy.registerThroughBackend('SIMA', 'KOSMOS', 'simastrahota@junak.svemira', 'simakosmos1', 'simakosmos1') // kraca, stavljeno je sve u cypress.json i commands.js
+        // cy.request('POST', 'https://gallery-api.vivifyideas.com/api/auth/login', {  //stavili smo u support commandsjs
+        //     email: "simakosmos@daleki.svemir.com",
+        //     password: "simakosmos1"
+        cy.get(locators.registerPage.terms).check()         
+        cy.get(locators.registerPage.submit).click()
+    })
 
-describe('negative register spec', () => {
+    it('visit gallery', () => {
+        cy.visit('')
+    })
+})
+
+/*describe('negative register spec', () => {
     beforeEach(() => {
         cy.visit('/')
         cy.get(locators.navigation.registerButton).click()
@@ -75,7 +90,7 @@ describe('negative register spec', () => {
 
 
 
-})
+})*/
 
 
 

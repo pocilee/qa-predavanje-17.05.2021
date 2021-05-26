@@ -47,5 +47,24 @@ Cypress.Commands.add('logInThroughBackend', () => {
         }
     }).its('body').then((response) => {
         window.localStorage.setItem('token', response.access_token)
+        cy.log(response.access_token)
+    })
+})
+
+Cypress.Commands.add('registerThroughBackend', () => {
+    cy.request({
+        method:'POST',  //moze i ovako sa method url body ali i ne mora
+        url: 'https://gallery-api.vivifyideas.com/api/auth/register',
+        body: {
+            email : Cypress.env('email'),
+            first_name : Cypress.env('firstName'),
+            last_name : Cypress.env('lastName'),
+            password : Cypress.env('passwordReg'),
+            password_confirmation : Cypress.env('passwordReg'),
+            terms_and_conditions: true
+        }
+    }).its('body').then((response) => {
+        window.localStorage.setItem('token', response.access_token)
+        cy.log(response.body)
     })
 })
