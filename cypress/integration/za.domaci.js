@@ -1,3 +1,7 @@
+/*napisati vizuelne asertacije za login, register, create galeries (pozitivni i negativni slucajevi)
+napisati intercept za register i create galery i napisati aseracije status koda
+napisati delete gallery ispocetka preko POM i napisati asertacije za njega kao i intercept metodu*/ 
+
 const locators = require("./../fixtures/locators.json")
 const faker = require('faker');
 
