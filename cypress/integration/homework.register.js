@@ -13,20 +13,26 @@ let userData = {
     randomPassword : faker.internet.password()
 }
 
-describe('register gallery backend', () => { 
-    before (() => {
-        // cy.logInThroughBackend('simakosmos@daleki.svemir.com', 'simakosmos1') // duza verzija
-        cy.registerThroughBackend('SIMA', 'KOSMOS', 'simastrahota@junak.svemira', 'simakosmos1', 'simakosmos1') // kraca, stavljeno je sve u cypress.json i commands.js
-        // cy.request('POST', 'https://gallery-api.vivifyideas.com/api/auth/login', {  //stavili smo u support commandsjs
-        //     email: "simakosmos@daleki.svemir.com",
-        //     password: "simakosmos1"
-        cy.get(locators.registerPage.terms).check()         
-        cy.get(locators.registerPage.submit).click()
+describe('register spec', () => {
+    beforeEach(() => {
+        cy.visit('/')
+        navigation.clickRegister()
+    })
+    
+    it('register with valid credentials', () => {
+        cy.intercept('POST', 'https://gallery-api.vivifyideas.com/api/auth/register', (req) => {
+        }).as('validRegister')
+        authRegister.register(userData.randomName, userData.randomLastName, userData.randomEmail, 'simakosmos1', 'simakosmos1')
+        authRegister.clickTerms()
+        authRegister.clickSubmit()
+        cy.wait('@validRegister').then((intercept) => {
+            cy.log(JSON.stringify(intercept.response.statusCode))
+            expect(intercept.response.statusCode).to.eql(200)
+        })
+
     })
 
-    it('visit gallery', () => {
-        cy.visit('')
-    })
+    
 })
 
 /*describe('negative register spec', () => {

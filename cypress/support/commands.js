@@ -63,8 +63,5 @@ Cypress.Commands.add('registerThroughBackend', () => {
             password_confirmation : Cypress.env('passwordReg'),
             terms_and_conditions: true
         }
-    }).its('body').then((response) => {
-        window.localStorage.setItem('token', response.access_token)
-        cy.log(response.body)
     })
 })

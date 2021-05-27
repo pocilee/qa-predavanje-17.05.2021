@@ -21,7 +21,7 @@ describe('login spec', () => {
         cy.get(locators.loginPage.submitBtn).click()
         cy.get(locators.navigation.logoutButton).click()
         cy.wait('@validLogin').then((intercept) => {
-            cy.log(JSON.stringify(intercept.respone.statusCode))
+            cy.log(JSON.stringify(intercept.response.statusCode))
             expect(intercept.response.statusCode).to.eql(200)
         })
 

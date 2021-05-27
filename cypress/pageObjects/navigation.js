@@ -19,6 +19,18 @@ class Navigation {
         return cy.get ('form div:nth-of-type(3) > [type]')
     }
 
+    get latestGalleryCreated () {
+        return cy.get (':nth-child(1) > h2 > .box-title')
+    }
+
+    get deleteGalleryBtn () {
+        return cy.get (':nth-child(5) > button.btn')
+    }
+
+    clickRegister() {
+        this.register.click()
+    }
+    
     clickTerms() {
         this.registerTerms.click()
     }
@@ -33,6 +45,14 @@ class Navigation {
 
     clickAddImage() {
         this.addImage.click()
+    }
+
+    clickSelectCreatedGallery() {
+        this.latestGalleryCreated.click()
+    }
+
+    clickDeleteGallery() {
+    this.deleteGalleryBtn.click()
     }
 }
 

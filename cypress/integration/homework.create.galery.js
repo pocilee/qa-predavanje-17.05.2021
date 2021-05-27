@@ -5,6 +5,7 @@ import { authLogin } from '../pageObjects/loginPage.js'
 import { authCreate } from '../pageObjects/createGalleryPage.js'
 import { navigation } from '../pageObjects/navigation.js'
 
+
 function randomLetters(a, b) {
     var fakerLetters = faker.helpers.repeatString(a, b)
     return fakerLetters
@@ -26,6 +27,22 @@ describe('negative tc - create gallery', () => {
             cy.get(locators.createGalleryPage.h1Header).should('have.css', 'color','rgb(72, 73, 75)')
             cy.get(locators.createGalleryPage.h1Header).should('have.text', 'Create Gallery')
         })
+    
+
+        it('successfully create gallery', () => {
+
+            cy.intercept('POST', 'https://gallery-api.vivifyideas.com/api/galleries',   (req) => {
+            }).as('validCreate')
+
+            authCreate.create('Sima Kosmos', 'junak 23,5 veka', 'https://pbs.twimg.com/profile_images/1073348422722293761/gtkwy3Fe.jpg')
+            //cy.wait(2000)
+            cy.wait('@validCreate').then((intercept) => {
+                cy.log(JSON.stringify(intercept.response.statusCode))
+                expect(intercept.response.statusCode).to.eql(201)
+            })
+        })
+        
+            
 
         it('no title', () => {
             authCreate.create('', 'Gallery Description', 'https://pbs.twimg.com/profile_images/1073348422722293761/gtkwy3Fe.jpg')
