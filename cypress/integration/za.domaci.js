@@ -14,15 +14,15 @@ describe('login spec', () => {
         // cy.get('a[class="nav-link nav-buttons"]').eq(0).click()  -- drugi nacin
         cy.get(locators.loginPage.email).type('simakosmos@daleki.svemir.com')
         cy.get(locators.loginPage.password).type('simakosmos1')
-        cy.get(locators.loginPage.submitBtn).click()
-        cy.get(locators.navigation.logoutButton).click()
-        cy.wait('@validLogin').then((intercept) => {
-            cy.log(JSON.stringify(intercept.respone.statusCode))
-            expect(intercept.response.statusCode).to.eql(200)
+        // cy.get(locators.loginPage.submitBtn).click()
+        // cy.get(locators.navigation.logoutButton).click()
+        // cy.wait('@validLogin').then((intercept) => {
+        //     cy.log(JSON.stringify(intercept.respone.statusCode))
+        //     expect(intercept.response.statusCode).to.eql(200)
         })
 
     })
-}) 
+// }) 
  
 
        
