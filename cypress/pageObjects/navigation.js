@@ -15,12 +15,16 @@ class Navigation {
         return cy.get ("a[href='/create']")
     }
 
+    get myGalleries () {
+        return cy.get ('a[href="/my-galleries"]')
+    }
+
     get addImage () {
         return cy.get ('form div:nth-of-type(3) > [type]')
     }
 
     get latestGalleryCreated () {
-        return cy.get (':nth-child(1) > h2 > .box-title')
+        return cy.get ('div:nth-of-type(1) > h2 > .box-title')
     }
 
     get deleteGalleryBtn () {
@@ -53,6 +57,10 @@ class Navigation {
 
     clickDeleteGallery() {
     this.deleteGalleryBtn.click()
+    }
+
+    clickMyGalleries() {
+        this.myGalleries.click()
     }
 }
 
