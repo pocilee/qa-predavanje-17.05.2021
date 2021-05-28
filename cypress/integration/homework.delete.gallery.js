@@ -5,6 +5,7 @@ import { authLogin } from '../pageObjects/loginPage.js'
 import { authCreate } from '../pageObjects/createGalleryPage.js'
 import { navigation } from '../pageObjects/navigation.js'
 
+var galleryId
 
 
 
@@ -16,7 +17,7 @@ describe('delete gallery', () => {
         authLogin.login('simakosmos@daleki.svemir.com', 'simakosmos1')
         
     })
-
+    
     it('create gallery', () => {
         cy.intercept('POST', 'https://gallery-api.vivifyideas.com/api/galleries', (req) => {
         }).as('validCreate')
@@ -24,28 +25,33 @@ describe('delete gallery', () => {
         navigation.clickCreateGallery()
         cy.url().should('include', '/create')
         authCreate.create('Sima Kosmos', 'junak 23,5 veka', 'https://pbs.twimg.com/profile_images/1073348422722293761/gtkwy3Fe.jpg')
+
+        
             
         cy.wait('@validCreate').then((intercept) => {
             cy.log(JSON.stringify(intercept.response.statusCode))
             expect(intercept.response.statusCode).to.eql(201)
-            window.localStorage.setItem('galleryId', (JSON.stringify(intercept.response.body.id)))
+            window.localStorage.setItem('gallery_id', (JSON.stringify(intercept.response.body.id)))
+            //cy.wrap(galleryId).as(window.localStorage.getItem('gallery_id'))
+            galleryId = (intercept.response.body.id)
+            cy.log('galleryId je: ' + galleryId)
+            
         })
-        let galleryId = window.localStorage.getItem('galleryId')
-        cy.log(galleryId)
-    
+        
+        
+        cy.log('galleryId je: ' + galleryId)
+        cy.wait(2000)
+
     })
 
-    it('delete created gallery', () => {
+    // it('delete created gallery', () => {
 
-        navigation.clickMyGalleries()
-        //cy.get('div:nth-of-type(1) > h2 > .box-title').click()
-        navigation.clickSelectCreatedGallery()
-        
-        navigation.clickDeleteGallery()
+    //     navigation.clickMyGalleries()
+    //     navigation.clickSelectCreatedGallery()
+    //     navigation.clickDeleteGallery()
+    //     cy.on('window:confirm', () => true);
 
-        cy.on('window:confirm', () => true);
-
-    })    
+    // })    
     
 })
 
