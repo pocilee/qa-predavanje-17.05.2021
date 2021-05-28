@@ -51,7 +51,7 @@ describe('delete gallery', () => {
     
         })
         
-    })
+
 
     it('delete created gallery', () => {
         var galleryId = window.localStorage.getItem('galleryId')
@@ -73,7 +73,7 @@ describe('delete gallery', () => {
 
     })    
     
-// })
+})
 
 
 
