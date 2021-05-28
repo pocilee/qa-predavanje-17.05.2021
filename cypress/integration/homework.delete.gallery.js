@@ -55,11 +55,12 @@ describe('delete gallery', () => {
 
     it('delete created gallery', () => {
         var galleryId = window.localStorage.getItem('galleryId')
+        // cy.visit(`https://gallery-api.vivifyideas.com/api/galleries/${galleryId}`)
 
         cy.intercept('DELETE', `https://gallery-api.vivifyideas.com/api/galleries/${galleryId}`, (req) => {
         }).as('validDelete')
 
-        navigation.clickSelectCreatedGallery()
+        // navigation.clickSelectCreatedGallery()
         navigation.clickDeleteGallery()
         // cy.wait('@validDelete').then((intercept) => {
         //     cy.log(JSON.stringify(intercept.response.statusCode))
