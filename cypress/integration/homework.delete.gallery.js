@@ -57,8 +57,8 @@ describe('delete gallery', () => {
         var galleryId = window.localStorage.getItem('galleryId')
         // cy.visit(`https://gallery-api.vivifyideas.com/api/galleries/${galleryId}`)
 
-        cy.intercept('DELETE', `https://gallery-api.vivifyideas.com/api/galleries/${galleryId}`, (req) => {
-        }).as('validDelete')
+        // cy.intercept('DELETE', `https://gallery-api.vivifyideas.com/api/galleries/${galleryId}`, (req) => {
+        // }).as('validDelete')
 
         // navigation.clickSelectCreatedGallery()
         navigation.clickDeleteGallery()
