@@ -29,6 +29,7 @@ describe('create gallery tests', () => {  //requestovali smo preko post, link i 
         //     window.localStorage.setItem('token', response.access_token)
         //     cy.log(response.access_token)
         // })
+        
     })
     
     it('visit gallery', () => {

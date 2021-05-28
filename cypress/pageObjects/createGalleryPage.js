@@ -15,6 +15,10 @@ class AuthCreate {
     get imageUrlInput() {
         return cy.get('.input-group > .form-control')
     }
+
+    get addImage () {
+        return cy.get ('form div:nth-of-type(3) > [type]')
+    }
     
     get imageUrlInputChange1() {
         return cy.get('div:nth-of-type(1) > .input-group.mb-3 > .form-control')
@@ -45,6 +49,30 @@ class AuthCreate {
         }
 
         this.submitBtn.click()
+    }
+    create2PicGallery(title, descriptions, imageUrl, imageUrl2) {
+        title = title || undefined
+        descriptions = descriptions || undefined
+        imageUrl = imageUrl || undefined
+
+        if(title != undefined) {
+            this.titleInput.type(title)
+        }
+            
+        if(descriptions != undefined) {
+            this.descriptionsInput.type(descriptions)
+        }
+        
+        if(imageUrl != undefined) {
+            this.imageUrlInput.type(imageUrl)
+        }
+        this.addImage.click()
+
+        this.imageUrlInputChange2.type(imageUrl2)
+
+        this.submitBtn.click()
+
+
     }
 
     create2(title, descriptions, imageUrl) {
