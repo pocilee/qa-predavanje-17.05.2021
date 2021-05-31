@@ -1,17 +1,10 @@
 {
-    "galleryData" : {
-        "title" : "Image title",
-        "description" : "Image description",
-        "imageUrl" : "https://pbs.twimg.com/profile_images/1073348422722293761/gtkwy3Fe.jpg",
-        "imageUrl2" : "https://i.ytimg.com/vi/trmqY8zINRE/maxresdefault.jpg"
-        
-    },
-
     "phpTravel" : {
         "userName" : "SimaKosmos",
         "password" : "simakosmos1",
         "firstName" : "Sima",
         "lastName" : "Kosmos",
+        "mobileNumber" : "041222333",
         "email" : "simakosmos@daleki.svemir.com",
         "passwordReg" : "simakosmos1",
         "passwordRegConfirm" : "simakosmos1"

@@ -1,13 +1,13 @@
 {
-    "baseUrl": "https://gallery-app.vivifyideas.com/",
+    "baseUrl": "https://www.phptravels.net/home",
     "env" : {
-        "userName" : "simakosmos@daleki.svemir.com",
+        "userName" : "SimaKosmos",
         "password" : "simakosmos1",
-        "firstName" : "Klark",
-        "lastName" : "Kent",
-        "email" : "supermen@kripton.com",
-        "passwordReg" : "neMozeMiNikoNista",
-        "passwordRegConfirm" : "neMozeMiNikoNista"
+        "firstName" : "Sima",
+        "lastName" : "Kosmos",
+        "email" : "simakosmos@daleki.svemir.com",
+        "passwordReg" : "simakosmos1",
+        "passwordRegConfirm" : "simakosmos1"
     }
     
 }
